@@ -1,0 +1,12 @@
+# Site settings
+highlighter: pygments
+title: Jaymzee's code corner
+description: > # this means to ignore newlines until "baseurl:"
+  Explorations in science, engineering and code.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jaymzee.github.io" # the base hostname & protocol for your site
+github_username:  jaymzee
+
+# Build settings
+markdown: kramdown
+exclude: ["Gemfile", "Gemfile.lock"]
