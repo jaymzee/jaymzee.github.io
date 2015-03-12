@@ -3,7 +3,7 @@ layout: post
 title: asteroid game
 ---
 
-
+<canvas id="pjs">Your browser does not support the canvas element</canvas>
 
 #Calculating line segment intersections for collision detection
 To test two line segments for intersection, create a parametric equation for each line. We'll use s for the first line and t for the second. Both s and t run from 0 to 1 to give us points along our line segments. Solving the system of equations using determinants will give values of s and t for where the lines intersect. Therefore if both s and t are within 0 and 1, then the line segments intersect.
@@ -30,7 +30,7 @@ Ship ship;
 ArrayList<Asteroid> asteroids;
 
 void setup() {
-  size(320, 480);
+  size(640, 480);
   stroke(255);
   noFill();
   ship = new Ship(width/2, height/2);
@@ -313,4 +313,3 @@ window.addEventListener("load", function() {
 }, false);
 </script>
 
-<canvas id="pjs">Your browser does not support the canvas element</canvas>
