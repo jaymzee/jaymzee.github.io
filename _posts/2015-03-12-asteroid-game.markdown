@@ -308,7 +308,7 @@ class Ship {
 }
 </script>
 <script>
-window.onload = function() {
-  document.getElementById("pjs").focus();    
-}
+//window.onload = function() {
+//  document.getElementById("pjs").focus();    
+//}
 </script>
