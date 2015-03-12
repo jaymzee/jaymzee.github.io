@@ -1,0 +1,47 @@
+---
+layout: post
+title: Webaudio API
+---
+#Audio in the browser - basic tones
+
+volume: <input id="volume" type="range" min="0" max="100" value="0">
+<span id="volumex"></span>
+
+frequency: <input id="frequency" type="range" min="200" max="5000" value="200">
+<span id="frequencyx"></span>
+
+waveform: <select id="waveform">
+ <option value="sine">sine</option>
+ <option value="square">square</option>
+ <option value="sawtooth">sawtooth</option>
+</select>
+
+<script type="text/javascript">
+if (typeof webkitAudioContext == "function") {
+    AudioContext = webkitAudioContext;
+}
+window.onload = function () {
+    var context = new AudioContext();
+    var osc1 = context.createOscillator();
+    var gain1 = context.createGain();
+    osc1.connect(gain1);
+    gain1.connect(context.destination);
+    osc1.start();
+
+    document.getElementById("volume").onchange = function () {
+        gain1.gain.value = this.value / 100;
+        document.getElementById("volumex").innerHTML = this.value;
+    };
+    document.getElementById("frequency").onchange = function () {
+        osc1.frequency.value = this.value;
+        document.getElementById("frequencyx").innerHTML = this.value;
+    };
+    document.getElementById("waveform").onchange = function () {
+        osc1.type = this.value;
+    };
+
+    document.getElementById("volume").onchange();
+    document.getElementById("frequency").onchange();
+    document.getElementById("waveform").onchange();
+};
+</script>
