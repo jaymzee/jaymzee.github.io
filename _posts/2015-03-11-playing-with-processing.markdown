@@ -17,4 +17,4 @@ size(300, 300);
 rect(100, 100, 50, 50);
 text("Hello world", 10, 20);
 </script>
-<canvas id="pjs">Your browser doesn't support the canvas element</canvas>
+<canvas id="pjs">Your browser does not support the canvas element</canvas>
