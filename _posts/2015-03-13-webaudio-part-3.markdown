@@ -1,25 +1,22 @@
 ---
 layout: post
-title: Webaudio part 2 - amplitude modulation
+title: Webaudio part 3 - frequency modulation
 ---
-#amplitude modulation
+#frequency modulation
 <a title="By Berserkerus (Own work) [CC BY-SA 2.5 (http://creativecommons.org/licenses/by-sa/2.5)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AAmfm3-en-de.gif"><img width="256" alt="Amfm3-en-de" src="//upload.wikimedia.org/wikipedia/commons/a/a4/Amfm3-en-de.gif"/></a>
 
 volume:
 <input id="volume" type="range" min="0" max="100" value="0">
 <span id="volumex"></span><br>
-frequency:
+carrier frequency:
 <input id="oscfreq" type="range" min="200" max="5000" value="200">
 <span id="oscfreqx"></span><br>
-LFO frequency:
+modulation frequency:
 <input id="lfofreq" type="range" min="1" max="250" value="1">
 <span id="lfofreqx"></span><br>
-waveform:
-<select id="waveform">
-  <option value="sine">sine</option>
-  <option value="square">square</option>
-  <option value="sawtooth">sawtooth</option>
-</select>
+modulation deviation:
+<input id="fmgain" type="range" min="0" max="100" value="0" step="0.01">
+<span id="fmgainx"></span><br>
 
 Not hearing anything? 
 Please use a modern browser that supports the Web Audio API.
@@ -39,13 +36,12 @@ window.onload = function () {
   var lfo1 = context.createOscillator();
   var gain1 = context.createGain();
   var gain2 = context.createGain();
-
-  osc1.connect(gain1);
-  gain1.connect(gain2);
+  
+  lfo1.connect(gain1);
+  gain1.connect(osc1.frequency);
+  osc1.connect(gain2);
   gain2.connect(context.destination);
-  lfo1.connect(gain1.gain);
 
-  gain1.gain.value = 1; //dc offset
   osc1.start(0);
   lfo1.start(0);
 
@@ -61,13 +57,15 @@ window.onload = function () {
     lfo1.frequency.setValueAtTime(this.value, context.currentTime);
     document.getElementById("lfofreqx").innerHTML = this.value;
   };
-  document.getElementById("waveform").onchange = function () {
-    osc1.type = this.value;
+  document.getElementById("fmgain").onchange = function () {    
+    gain1.gain.setValueAtTime(this.value, context.currentTime);
+    document.getElementById("fmgainx").innerHTML = this.value;
   };
 
   document.getElementById("volume").onchange();
   document.getElementById("oscfreq").onchange();
-  document.getElementById("lfofreq").onchange();  
+  document.getElementById("lfofreq").onchange();
+  document.getElementById("fmgain").onchange();
 };
 
 </script>

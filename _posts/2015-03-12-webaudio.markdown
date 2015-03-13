@@ -31,7 +31,7 @@ window.onload = function () {
   var gain1 = context.createGain();
   osc1.connect(gain1);
   gain1.connect(context.destination);
-  osc1.start();
+  osc1.start(0);
 
   document.getElementById("volume").onchange = function () {
     gain1.gain.value = this.value / 100;
