@@ -5,43 +5,50 @@ title: Webaudio API
 #Audio in the browser - basic tones
 
 volume: <input id="volume" type="range" min="0" max="100" value="0">
-<span id="volumex"></span>
-
+<span id="volumex"></span><br>
 frequency: <input id="frequency" type="range" min="200" max="5000" value="200">
-<span id="frequencyx"></span>
-
+<span id="frequencyx"></span><br>
 waveform: <select id="waveform">
- <option value="sine">sine</option>
- <option value="square">square</option>
- <option value="sawtooth">sawtooth</option>
+  <option value="sine">sine</option>
+  <option value="square">square</option>
+  <option value="sawtooth">sawtooth</option>
 </select>
 
+Not hearing anything, please use a modern browser that supports the Web Audio API.
+
 <script type="text/javascript">
-if (typeof webkitAudioContext == "function") {
-    AudioContext = webkitAudioContext;
+
+"use strict";
+
+if (typeof AudioContext != "function" && 
+  typeof webkitAudioContext == "function") {
+  window.AudioContext = webkitAudioContext;
 }
+
 window.onload = function () {
-    var context = new AudioContext();
-    var osc1 = context.createOscillator();
-    var gain1 = context.createGain();
-    osc1.connect(gain1);
-    gain1.connect(context.destination);
-    osc1.start();
+  var context = new AudioContext();
+  var osc1 = context.createOscillator();
+  var gain1 = context.createGain();
+  osc1.connect(gain1);
+  gain1.connect(context.destination);
+  osc1.start();
 
-    document.getElementById("volume").onchange = function () {
-        gain1.gain.value = this.value / 100;
-        document.getElementById("volumex").innerHTML = this.value;
-    };
-    document.getElementById("frequency").onchange = function () {
-        osc1.frequency.value = this.value;
-        document.getElementById("frequencyx").innerHTML = this.value;
-    };
-    document.getElementById("waveform").onchange = function () {
-        osc1.type = this.value;
-    };
+  document.getElementById("volume").onchange = function () {
+    gain1.gain.value = this.value / 100;
+    document.getElementById("volumex").innerHTML = this.value;
+  };
+  document.getElementById("frequency").onchange = function () {
+    //osc1.frequency.value = this.value;
+    osc1.frequency.setValueAtTime(this.value, context.currentTime);
+    document.getElementById("frequencyx").innerHTML = this.value;
+  };
+  document.getElementById("waveform").onchange = function () {
+    osc1.type = this.value;
+  };
 
-    document.getElementById("volume").onchange();
-    document.getElementById("frequency").onchange();
-    document.getElementById("waveform").onchange();
+  document.getElementById("volume").onchange();
+  document.getElementById("frequency").onchange();
+  document.getElementById("waveform").onchange();
 };
+
 </script>
