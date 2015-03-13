@@ -10,13 +10,13 @@ volume:
 <span id="volumex"></span><br>
 carrier frequency:
 <input id="oscfreq" type="range" min="200" max="5000" value="200">
-<span id="oscfreqx"></span><br>
+<span id="oscfreqx"></span> Hz<br>
 modulation frequency:
 <input id="lfofreq" type="range" min="1" max="250" value="1">
-<span id="lfofreqx"></span><br>
+<span id="lfofreqx"></span> Hz<br>
 modulation deviation:
 <input id="fmgain" type="range" min="0" max="100" value="0" step="0.01">
-<span id="fmgainx"></span><br>
+<span id="fmgainx"></span> Hz<br>
 
 Not hearing anything? 
 Please use a modern browser that supports the Web Audio API.

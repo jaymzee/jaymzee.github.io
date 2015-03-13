@@ -10,10 +10,10 @@ volume:
 <span id="volumex"></span><br>
 frequency:
 <input id="oscfreq" type="range" min="200" max="5000" value="200">
-<span id="oscfreqx"></span><br>
+<span id="oscfreqx"></span> Hz<br>
 LFO frequency:
 <input id="lfofreq" type="range" min="1" max="250" value="1">
-<span id="lfofreqx"></span><br>
+<span id="lfofreqx"></span> Hz<br>
 waveform:
 <select id="waveform">
   <option value="sine">sine</option>

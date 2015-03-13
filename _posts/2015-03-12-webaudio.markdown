@@ -7,7 +7,7 @@ title: Webaudio API
 volume: <input id="volume" type="range" min="0" max="100" value="0">
 <span id="volumex"></span><br>
 frequency: <input id="frequency" type="range" min="200" max="5000" value="200">
-<span id="frequencyx"></span><br>
+<span id="frequencyx"></span> Hz<br>
 waveform: <select id="waveform">
   <option value="sine">sine</option>
   <option value="square">square</option>
