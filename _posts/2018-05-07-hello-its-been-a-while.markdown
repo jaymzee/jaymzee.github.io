@@ -2,7 +2,7 @@
 layout: post
 title: "Hello, pygame is pretty cool"
 ---
-Graphics programming in python using pygame
+#Graphics programming in python using pygame
 
 {% highlight python %}
 import sys
