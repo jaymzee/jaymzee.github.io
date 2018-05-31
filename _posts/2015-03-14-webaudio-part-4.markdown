@@ -2,7 +2,7 @@
 layout: post
 title: Webaudio - part 4 - audio synthesis
 ---
-#envelopes
+# Envelopes
 without an envelope, the sound would seem very abrupt
 (turning on then turning off).
 

@@ -2,7 +2,7 @@
 layout: post
 title: Webaudio - part 5
 ---
-#visualization of audio signals
+# visualization of audio signals
 volume: <input id="volume" type="range" min="0" max="1" value="0" step=".01">
 <span id="volumex"></span><br>
 fmod: <input id="fmod" type="range" min="0" max="4000" value="0">
@@ -16,7 +16,7 @@ amod: <input id="amod" type="range" min="0" max="4000" value="0">
 ag: <input id="ag" type="range" min="0" max="1" value="0" step=".01">
 <span id="agx"></span><br>
 
-#oscilloscope and frequency spectrum
+# oscilloscope and frequency spectrum
 <canvas id="tdplot" width="300" height="150">
   your browser does not support the canvas element
 </canvas> 
@@ -25,7 +25,7 @@ ag: <input id="ag" type="range" min="0" max="1" value="0" step=".01">
   your browser does not support the canvas element
 </canvas>
 
-#node graph
+# node graph
 {% highlight javascript %}
 fmod.connect(fdev);
 fdev.connect(carrier.frequency);
@@ -37,7 +37,6 @@ vol.connect(actx.destination);
 {% endhighlight %}
 
 <script>
-
 "use strict";
 
 if (typeof AudioContext != "function" && 
@@ -159,5 +158,4 @@ window.onload = function () {
 
   window.requestAnimationFrame(draw);
 }
-
 </script>

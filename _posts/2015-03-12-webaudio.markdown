@@ -2,7 +2,7 @@
 layout: post
 title: Webaudio API
 ---
-#Audio in the browser - basic tones
+# Audio in the browser - basic tones
 
 volume: <input id="volume" type="range" min="0" max="100" value="0">
 <span id="volumex"></span><br>
