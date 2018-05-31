@@ -2,7 +2,11 @@
 layout: post
 title: "Hello, pygame is pretty cool"
 ---
-#Graphics programming in python using pygame
+# Graphics programming in python using pygame
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+officia deserunt mollitia animi, id est laborum et dolorum fuga.
 
 {% highlight python %}
 import sys

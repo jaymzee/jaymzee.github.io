@@ -5,7 +5,7 @@ title: asteroid game
 
 <canvas id="pjs">Your browser does not support the canvas element</canvas>
 
-#Calculating line segment intersections for collision detection
+# Calculating line segment intersections for collision detection
 To test two line segments for intersection, create a parametric equation for each line. We'll use s for the first line and t for the second. Both s and t run from 0 to 1 to give us points along our line segments. Solving the system of equations using determinants will give values of s and t for where the lines intersect. Therefore if both s and t are within 0 and 1, then the line segments intersect.
 
 {% highlight java %}
