@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Webaudio - part 5
+title: Webaudio - part 5 - visualization of audio signals
 ---
 # visualization of audio signals
 volume: <input id="volume" type="range" min="0" max="1" value="0" step=".01">
