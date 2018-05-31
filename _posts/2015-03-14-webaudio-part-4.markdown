@@ -14,6 +14,7 @@ For most synthesizers there are at least 4 parameters to adjust the envelope:
  * R - release - rate at which the sound diminsishes to zero after key release
 
 Use the home row of keys on your keyboard to play the synth.
+
      w   r t   u i o
     a s d f g h j k l ;
 
