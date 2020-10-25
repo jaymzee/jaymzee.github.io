@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Conway's game of life in Rust and WebAssembly
+permalink: /wasm-game-of-life/
 ---
 based on the [Rust and WebAssembly book tutorial](https://rustwasm.github.io/docs/book/introduction.html)
 
 <canvas id="game-of-life-canvas"></canvas>
-<script src="/assets/js/wgol/bootstrap.js"></script>
+<script src="bootstrap.js"></script>
 
 {% highlight rust %}
 let live_neighbors = self.live_neighbor_count(row, col);
